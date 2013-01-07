@@ -30,4 +30,5 @@ WHAT TO DO IF YOU CAN'T GET IT TO WORK!
 		The MySQL lines in the log always precede with "MySQL Error:" (without the quotation marks)
 	- make sure the settings in this file (_MySQL.lua) are correct
 	- make sure the MySQL server is accessible from the outside world
+	-
 ]]
