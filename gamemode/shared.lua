@@ -227,8 +227,8 @@ TEAM_WHORE = AddExtraTeam("Whore", Color(204, 51, 255, 255), "models/player/alyx
 TEAM_BANKER = AddExtraTeam("Banker", Color(102, 102, 0, 255), "models/player/odessa.mdl", [[You are a banker, build a bank. You may need a bodyguard, invest in hiring one!]], {}, "banker", 2, 80, 0, false, false, false)
 //Bodyguard
 TEAM_BODYGUARD = AddExtraTeam("Bodyguard", Color(0, 204, 255, 255), "models/player/Phoenix.mdl", [[You are a bodyguard, you protect your client. Choose your price.]], {"weapon_mad_fists","weapon_mad_galil"}, "bodyguard", 4, 95, 0, false, false, false)
-
-
+TEAM_THIEF = AddExtraTeam("Thief", Color(0,0,0,255), "models/player/arctic.mdl", [[Raid people's homes and take what you can find..]], {"weapon_lockpick"}, "Thief",4, 65,0,false, false, {TEAM_CITIZEN})
+TEAM_Hitman = AddExtraTeam("Hitman", Color(0,0,0,255), "models/player/guerilla.mdl", [[Kill for money]] {weapon_mad_awp}, "Hitman",3,75,0,false,false, {TEAM_CITIZEN}]
 
 
 
