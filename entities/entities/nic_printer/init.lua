@@ -15,7 +15,7 @@ function ENT:Initialize()
 	if phys:IsValid() then phys:Wake() end
 	self.sparking = false
 	self.damage = 1000
-	printerLife = self.damage
+	self:SetNWInt("Damage",1000)
 	self.IsMoneyPrinter = true
 	timer.Simple(1.0, function() PrintMore(self) end)
 	self:SetNWInt("PrintA",maxCycle)
@@ -25,6 +25,7 @@ function ENT:OnTakeDamage(dmg)
 	if self.burningup then return end
 
 	self.damage = (self.damage or 100) - dmg:GetDamage()
+	self:SetNWInt("Damage",self.damage)
 	if self.damage <= 0 then
 		local rnd = math.random(1, 10)
 		if rnd < 6 then
