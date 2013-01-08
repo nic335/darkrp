@@ -19,6 +19,8 @@ function ENT:Initialize()
 	self.IsMoneyPrinter = true
 	timer.Simple(1.0, function() PrintMore(self) end)
 	self:SetNWInt("PrintA",maxCycle)
+	self:SetNWInt("curCycle",0)
+	self:SetNWInt("maxCycle",maxCycle)
 end
 
 function ENT:OnTakeDamage(dmg)
@@ -88,6 +90,7 @@ function ENT:CreateMoneybag()
 		amount = 50
 	end
 	curCycle = curCycle + 1
+	self:SetNWInt("curCycle",curCycle)
 	if curCycle >= maxCycle then self:BurstIntoFlames() end
 	local Y = math.random(1,10)
 	local amount = self:GetNWInt("PrintA") + Y

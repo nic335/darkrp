@@ -137,7 +137,7 @@ AddEntity("Nic Programed Money Printer", {
 	ent = "nic_printer",
 	model = "models/props_c17/consolebox01a.mdl",
 	price = 15000,
-	max = 4,
+	max = 5,
 	cmd = "/buymoneyprinter3"
 })
 
