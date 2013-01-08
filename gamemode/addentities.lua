@@ -183,3 +183,5 @@ AddCustomShipment("SG552", {
 	allowed = {"TEAM_GUN"}
 })
 
+TEAM_THIEF = AddExtraTeam("Thief", Color(0,0,0,255), "models/player/arctic.mdl", [[Raid people's homes and take what you can find..]], {"weapon_lockpick"}, "Thief",4, 65,0,false, false, {TEAM_CITIZEN})
+TEAM_Hitman = AddExtraTeam("Hitman", Color(0,0,0,255), "models/player/guerilla.mdl", [[Kill for money]] {weapon_mad_awp}, "Hitman",3,75,0,false,false, {TEAM_CITIZEN}]
