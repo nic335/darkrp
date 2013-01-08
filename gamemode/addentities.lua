@@ -117,18 +117,29 @@ AddEntity("Drug lab", {
 	allowed = {TEAM_GANG, TEAM_MOB}
 })
 
-AddEntity("Money printer", {
-	ent = "money_printer",
+AddEntity("Ruby Money Printer", {
+	ent = "money_printer_ruby",
 	model = "models/props_c17/consolebox01a.mdl",
 	price = 1000,
 	max = 2,
-	cmd = "/buymoneyprinter"
+	cmd = "/buymoneyprinter1"
 })
 
-AddEntity("Ruby Printer", "ruby_money_printer", "models/props_c17/consolebox01a.mdl", 750, 2, "/buyprinter1")
-AddEntity("Platinum Printer", "platinum_printer", "models/props_c17/consolebox01a.mdl", 1250, 2, "/buyprinter2")
-AddEntity("Diamond Printer", "diamond_printer", "models/props_c17/consolebox01a.mdl", 3000, 2, "/buyprinter3")
-AddEntity("Class A Printer", "nuclear_printer", "models/props_c17/consolebox01a.mdl", 7000, 2, "/buyprinter4")
+AddEntity("Platium Money Printer", {
+	ent = "money_printer_platium",
+	model = "models/props_c17/consolebox01a.mdl",
+	price = 10000,
+	max = 2,
+	cmd = "/buymoneyprinter2"
+})
+
+AddEntity("Nic Programed Money Printer", {
+	ent = "nic_printer",
+	model = "models/props_c17/consolebox01a.mdl",
+	price = 15000,
+	max = 2,
+	cmd = "/buymoneyprinter3"
+})
 
 AddEntity("Microwave", {
 	ent = "microwave",

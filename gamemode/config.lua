@@ -8,7 +8,7 @@ GM.Config.voice3D						= true
 -- adminnpcs - Whether or not NPCs should be admin only.
 GM.Config.adminnpcs 					= true
 -- AdminsCopWeapons - Enable/disable admins spawning with cop weapons
-GM.Config.AdminsCopWeapons 				= true
+GM.Config.AdminsCopWeapons 				= false
 -- adminsents - Whether or not SENTs should be admin only.
 GM.Config.adminsents 					= true
 -- adminvehicles - Whether or not Vehicles should be admin only.
@@ -18,11 +18,11 @@ GM.Config.advertisements 				= true
 -- allow people getting their own custom jobs
 GM.Config.allowjobswitch 				= true
 -- allowrpnames - Allow Players to Set their RP names using the /rpname command.
-GM.Config.allowrpnames 					= true
+GM.Config.allowrpnames 					= false
 -- allowsprays - Enable/disable the use of sprays on the server.
 GM.Config.allowsprays 					= true
 -- allowvehicleowning - Enable/disable whether people can own vehicles.
-GM.Config.allowvehicleowning 			= true
+GM.Config.allowvehicleowning 			= false
 -- allowvnocollide - Enable/disable the ability to no-collide a vehicle (for security).
 GM.Config.allowvnocollide 				= false
 -- alltalk - Enable for global chat, disable for local chat.
@@ -228,7 +228,7 @@ GM.Config.shipmentspawntime				= 10
 -- startinghealth - the health when you spawn.
 GM.Config.startinghealth				= 100
 -- startingmoney - your wallet when you join for the first time.
-GM.Config.startingmoney					= 500
+GM.Config.startingmoney					= 1000
 -- vehiclecost - Sets the cost of a vehicle (To own it).
 GM.Config.vehiclecost					= 40
 -- wallettaxmax - Maximum percentage of tax to be paid.

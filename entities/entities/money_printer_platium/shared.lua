@@ -1,7 +1,7 @@
 ENT.Type = "anim"
 ENT.Base = "base_gmodentity"
-ENT.PrintName = "Emerald Printer"
-ENT.Author = "KoZ & !!!WARLOCK!!!"
+ENT.PrintName = "Platium Printer"
+ENT.Author = "Nic & KOZ"
 ENT.Spawnable = false
 ENT.AdminSpawnable = false
 

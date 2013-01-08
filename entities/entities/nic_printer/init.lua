@@ -1,21 +1,24 @@
 AddCSLuaFile("cl_init.lua")
 AddCSLuaFile("shared.lua")
 include("shared.lua")
-
+local maxCycle = math.random(200,5000)
+local curCycle = 0
 local PrintMore
+local printerLife  = 0
 function ENT:Initialize()
 	self:SetModel("models/props_c17/consolebox01a.mdl")
 	self:PhysicsInit(SOLID_VPHYSICS)
 	self:SetMoveType(MOVETYPE_VPHYSICS)
 	self:SetSolid(SOLID_VPHYSICS)
-	self:SetColor(Color(15, 82, 186, 255))
+	self:SetColor(Color(145,252, 255, 255))
 	local phys = self:GetPhysicsObject()
 	if phys:IsValid() then phys:Wake() end
 	self.sparking = false
-	self.damage = 100
+	self.damage = 1000
+	printerLife = self.damage
 	self.IsMoneyPrinter = true
 	timer.Simple(1.0, function() PrintMore(self) end)
-	self:SetNWInt("PrintA",0)
+	self:SetNWInt("PrintA",maxCycle)
 end
 
 function ENT:OnTakeDamage(dmg)
@@ -64,14 +67,14 @@ end
 PrintMore = function(ent)
 	if IsValid(ent) then
 		ent.sparking = true
-		timer.Simple(1.0, function() ent:CreateMoneybag() end)
+		timer.Simple(0.1, function() ent:CreateMoneybag() end)
 	end
 end
 
 function ENT:Use(activator)
 	if(activator:IsPlayer()) and self:GetNWInt("PrintA") >= 1 then
 	activator:AddMoney(self:GetNWInt("PrintA"));
-	GAMEMODE:Notify(activator, 1, 4, "You have collected $"..self:GetNWInt("PrintA").." from a Sapphire Printer.")
+	GAMEMODE:Notify(activator, 1, 4, "You have collected $"..self:GetNWInt("PrintA").." from a Printer.")
 	self:SetNWInt("PrintA",0)
 	end
 end
@@ -80,13 +83,14 @@ function ENT:CreateMoneybag()
 	if not IsValid(self) then return end
 	if self:IsOnFire() then return end
 	local MoneyPos = self:GetPos()
-	local Y = GAMEMODE.Config.sapphireprintamount
 	if amount == 0 then
-		amount = 75
+		amount = 50
 	end
-	if math.random(250, 2000) == 3 then self:BurstIntoFlames() end
+	curCycle = curCycle + 1
+	if curCycle >= maxCycle then self:BurstIntoFlames() end
+	local Y = math.random(1,10)
 	local amount = self:GetNWInt("PrintA") + Y
 	self:SetNWInt("PrintA",amount)
 	self.sparking = false
-	timer.Simple(math.random(10, 15), function() PrintMore(self) end)
+	timer.Simple(0.5, function() PrintMore(self) end)
 end

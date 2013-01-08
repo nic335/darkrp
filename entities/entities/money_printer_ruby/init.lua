@@ -64,14 +64,14 @@ end
 PrintMore = function(ent)
 	if IsValid(ent) then
 		ent.sparking = true
-		timer.Simple(1.0, function() ent:CreateMoneybag() end)
+		timer.Simple(0.1, function() ent:CreateMoneybag() end)
 	end
 end
 
 function ENT:Use(activator)
 	if(activator:IsPlayer()) and self:GetNWInt("PrintA") >= 1 then
 	activator:AddMoney(self:GetNWInt("PrintA"));
-	GAMEMODE:Notify(activator, 1, 4, "You have collected $"..self:GetNWInt("PrintA").." from a Ruby Printer.")
+	GAMEMODE:Notify(activator, 1, 4, "You have collected $"..self:GetNWInt("PrintA").." from a Printer.")
 	self:SetNWInt("PrintA",0)
 	end
 end
@@ -80,13 +80,13 @@ function ENT:CreateMoneybag()
 	if not IsValid(self) then return end
 	if self:IsOnFire() then return end
 	local MoneyPos = self:GetPos()
-	local Y = GAMEMODE.Config.rubyprintamount
 	if amount == 0 then
 		amount = 50
 	end
-	if math.random(250, 2000) == 3 then self:BurstIntoFlames() end
+	if math.random(250, 2000) >= 1980 then self:BurstIntoFlames() end
+	local Y = math.random(1,10)
 	local amount = self:GetNWInt("PrintA") + Y
 	self:SetNWInt("PrintA",amount)
 	self.sparking = false
-	timer.Simple(math.random(10, 15), function() PrintMore(self) end)
+	timer.Simple(math.random(3, 15), function() PrintMore(self) end)
 end
